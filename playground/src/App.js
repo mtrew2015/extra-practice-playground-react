@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useContext} from 'react';
 import './App.css';
+import NewComponent from './NewComponent';
+import NameContext from './NameContext';
+
+
+// then create provider component
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const nameContext = useContext(NameContext)
+	return (
+		<div className="App">
+			<h1>Context API Practice</h1>
+      {nameContext.name}
+      <NewComponent/>
+		</div>
+	);
 }
 
 export default App;
